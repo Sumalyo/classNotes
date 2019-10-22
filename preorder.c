@@ -49,6 +49,18 @@ void postorder(node *t)		//address of root node is passed in t
 	}
 }
 
+void inorder(node *t)		//address of root node is passed in t
+{
+	if(t!=NULL)
+	{
+                inorder(t->left);
+		printf("\n%d",t->data);		//visit the root
+		inorder(t->right);
+		
+				
+	}
+}
+
 int main()
 {	
 	node *root;
@@ -57,6 +69,9 @@ int main()
 	preorder(root);
 	printf("\n");printf("\nThe postorder traversal of tree is:\n");
         postorder(root);
+	printf("\n");
+        printf("\nThe inorder traversal of tree is:\n");
+        inorder(root);
 	printf("\n");
 	return 0;
 }
