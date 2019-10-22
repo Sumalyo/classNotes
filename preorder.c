@@ -38,13 +38,25 @@ void preorder(node *t)		//address of root node is passed in t
 		preorder(t->right);		//preorder traversal om right subtree
 	}
 }
- 
+void postorder(node *t)		//address of root node is passed in t
+{
+	if(t!=NULL)
+	{
+                postorder(t->left);		
+		postorder(t->right);
+		printf("\n%d",t->data);		//visit the root
+				
+	}
+}
+
 int main()
 {	
 	node *root;
 	root=create();
 	printf("\nThe preorder traversal of tree is:\n");
 	preorder(root);
+	printf("\n");printf("\nThe postorder traversal of tree is:\n");
+        postorder(root);
 	printf("\n");
 	return 0;
 }
