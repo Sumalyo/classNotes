@@ -10,14 +10,20 @@ int main(int argc,char** argv)
     printf("-----------------------------------------------------------\n");
     printf("Usage ./program.exe [command] [params]\n");
     printf("\t\t\t\t s : to display some system information\n");
-    printf("\t\t\t\t c [HEX_BYTE]: convert  0x00-0xFF to integer \n");
-    printf(" argv %d\n",argv[1][0]);
+    printf("\t\t\t\t c [HEX_BYTE]: convert  0x00-0xFF to integer \n\n");
+    //printf(" argv %d\n",argv[1][0]);
 
     switch (argv[1][0])
     {
-    case 's' /* constant-expression */:
-        /* code */
-        break;
+    case 's' :
+    printf("This computer %s\tis running on %s\n",getenv("COMPUTERNAME"),getenv("OS"));
+    printf("-----------CPU INFO---------------\n");
+    printf("Processor %s\tCores %s Level %s Revision %s\n",getenv("PROCESSOR_IDENTIFIER"),getenv("NUMBER_OF_PROCESSORS"),
+    getenv("PROCESSOR_REVISION"),getenv("PROCESSOR_LEVEL"));
+    printf("-----------------------------------\n");
+    printf("Current user: %s \n",getenv("USERNAME"));
+    break;
+    
     case 'h':
     default:
     printf("Usage ./program.exe [command] [params]\n");
