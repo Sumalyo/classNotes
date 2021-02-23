@@ -1,7 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-//logical opertaor switch_case pointers arrays arguments preprocessors
-//a long program by gem...an ode to inefficient programming
 int main(int argc,char** argv)
 {   //the usual declaration for command line arguments in c
     //this code accepts command line arguments amd does boring stuff
@@ -14,7 +12,7 @@ int main(int argc,char** argv)
     printf("\t\t\t\t a [HEX] [HEX]: to display the sum of any two hex expressions\n");
     printf("\t\t\t\t p [HEX] [HEX]: to multiply two HEX expressions\n");
     printf("\t\t\t\t m [HEX1] [HEX2]: to substract two HEX expressions HEX1 - HEX2\n\n");
-    //printf(" argv %d\n",argv[1][0]);
+
 
     int x=0;int y1,y2,y;char tmp[16];
     switch (argv[1][0])
