@@ -10,9 +10,13 @@ int main(int argc,char** argv)
     printf("-----------------------------------------------------------\n");
     printf("Usage ./program.exe [command] [params]\n");
     printf("\t\t\t\t s : to display some system information\n");
-    printf("\t\t\t\t c [HEX_BYTE]: convert  0x00-0xFF to integer \n\n");
+    printf("\t\t\t\t c [HEX_BYTE]: convert  0x00-0xFF to integer \n");
+    printf("\t\t\t\t a [HEX] [HEX]: to display the sum of any two hex expressions\n");
+    printf("\t\t\t\t p [HEX] [HEX]: to multiply two HEX expressions\n");
+    printf("\t\t\t\t m [HEX1] [HEX2]: to substract two HEX expressions HEX1 - HEX2\n\n");
     //printf(" argv %d\n",argv[1][0]);
-    int x=0;
+
+    int x=0;int y1,y2,y;char tmp[16];
     switch (argv[1][0])
     {
     case 's' :
@@ -65,6 +69,28 @@ int main(int argc,char** argv)
     }
     printf("The decimal value of %s is %d",argv[2],x);
     break;
+    case 'a':
+    y1 =(int)strtol(argv[2],NULL,16);
+    y2 = (int)strtol(argv[3],NULL,16);
+    y = y1+y2;
+    itoa(y,tmp,16);
+    printf("The sum is %s tmp (decimal value %d)",tmp,y);
+    break;
+       case 'p':
+    y1 =(int)strtol(argv[2],NULL,16);
+    y2 = (int)strtol(argv[3],NULL,16);
+    y = y1*y2;
+    itoa(y,tmp,16);
+    printf("The sum is %s tmp (decimal value %d)",tmp,y);
+    break;
+       case 'm':
+    y1 =(int)strtol(argv[2],NULL,16);
+    y2 = (int)strtol(argv[3],NULL,16);
+    y = y1-y2;
+    itoa(y,tmp,16);
+    printf("The sum is %s tmp (decimal value %d)",tmp,y);
+    break;
+
     case 'h':
     default:
     printf("Usage ./program.exe [command] [params]\n");
