@@ -69,6 +69,7 @@ int main(int argc,char** argv)
         case 'E': case 'e':x+=16*14; break;
         case 'F': case 'f':x+=16*15;break;
     }
+    //here we extract 4bit segmets and use switch case to find decimal values
     printf("The decimal value of %s is %d",argv[2],x);
     break;
     default:
@@ -85,8 +86,11 @@ int main(int argc,char** argv)
     y2 = (int)strtol(argv[3],NULL,16);
     y = y1+y2;
     itoa(y,tmp,16);
+    //here we use some standard C functions to convert HEXs to Integers add them
+    //and convert back to HEX
     printf("The sum is %s tmp (decimal value %d)",tmp,y);
     break;
+    //the outer switch case is used to check if the correct usage of the command is done
     default:
     printf("Invalid params present. Check Usage\n");
     printf("\t\t\t\t a [HEX] [HEX]: to display the sum of any two hex expressions\n");
